@@ -517,20 +517,265 @@ const arrowAdd = (a, b, c) => a + b + c;
 // calculateTotalPrice(3,400);
     
 
-const calculateTotalPrice = (quantity, pricePerItem) =>
-    quantity * pricePerItem;
+// const calculateTotalPrice = (quantity, pricePerItem) =>
+//   quantity * pricePerItem;
+
+// console.log(calculateTotalPrice(5, 100));
+// console.log(calculateTotalPrice(8, 60));
+// console.log(calculateTotalPrice(3, 400));
 
 
-сonsole.log(calculateTotalPrice(5,100));
-сonsole.log(calculateTotalPrice(8,60));
-сonsole.log(calculateTotalPrice(3,400));
+
+/*Задача 10 
+СТРЕЛОЧНЫЕ ФУНКЦИИ КАК КОЛЛБЕКИ
+Анонимные стрелочные функции отлично подходят как коллбеки для 
+перебирающих методов массива из-за более краткого синтаксиса 
+объявления, особенно если не нужно тело функции.
+
+const numbers = [5, 10, 15, 20, 25];
+
+// Объявление функции
+numbers.forEach(function (number, index) {
+  console.log(`Индекс ${index}, значение ${number}`);
+});
+
+// Анонимная стрелочная функция
+numbers.forEach((number, index) => {
+  console.log(`Индекс ${index}, значение ${number}`);
+});
+Стрелочную коллбек-функцию также можно объявлять отдельно и 
+передавать на неё ссылку. Это стоит делать если одна функция 
+используется в нескольих местах программы или если она громоздкая.
+
+const numbers = [5, 10, 15, 20, 25];
+
+const logMessage = (number, index) => {
+  console.log(`Индекс ${index}, значение ${number}`);
+};
+
+numbers.forEach(logMessage);
+Выполни рефакторинг функции calculateTotalPrice(orderedItems) 
+заменив её объявление на стрелочную функцию. Замени коллбек-функцию
+ передаваемую в метод forEach() на стрелочную функцию.
+
+Объявлена переменная calculateTotalPrice
+Переменной calculateTotalPrice присвоена стрелочная функция с 
+параметром (orderedItems)
+Для перебора массива orderedItems использован метод forEach
+Коллбек для метода forEach это стрелочная функция
+Вызов функции calculateTotalPrice([12, 85, 37, 4]) возвращает 138
+Вызов функции calculateTotalPrice([164, 48, 291]) возвращает 503
+Вызов функции calculateTotalPrice([412, 371, 94, 63, 176]) 
+возвращает 1116
+Вызов функции со случайными, но валидными аргументами, 
+возвращает правильное значение*/
+
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+
+//   orderedItems.forEach(function (item) {
+//     totalPrice += item;
+//   });
+
+//   return totalPrice;
+// }
+
+// const calculateTotalPrice = orderedItems => {
+//   let totalPrice = 0;
+  
+//   orderedItems.forEach((item) => totalPrice += item);
+//   console.log(totalPrice);
+//   return totalPrice;
+// }
+
+// calculateTotalPrice([12, 85, 37, 4]);
+// calculateTotalPrice([164, 48, 291]);
+// calculateTotalPrice([412, 371, 94, 63, 176]);
 
 
- /*Задача 10 */
- /*Задача 11 */
- /*Задача 12 */
- /*Задача 13 */
- /*Задача 14 */
+/*Задача 11
+ЗАДАЧА. ФИЛЬТРАЦИЯ МАССИВА ЧИСЕЛ 2.0
+Замени объявление функции filterArray() и коллбек для метода forEach() на 
+стрелочные функции.
+
+Объявлена переменная filterArray
+Переменной filterArray присвоена стрелочная функция с параметрами 
+(numbers, value)
+Для перебора массива numbers использован метод forEach
+Коллбек для метода forEach это стрелочная функция
+Вызов функции filterArray([1, 2, 3, 4, 5], 3) возвращает [4, 5]
+Вызов функции filterArray([1, 2, 3, 4, 5], 4) возвращает [5]
+Вызов функции filterArray([1, 2, 3, 4, 5], 5) возвращает []
+Вызов функции filterArray([12, 24, 8, 41, 76], 38) возвращает [41, 76]
+Вызов функции filterArray([12, 24, 8, 41, 76], 20) возвращает [24, 41, 76] */
+ 
+//!Не стрелочная
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+
+//   numbers.forEach(function (number) {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   });
+
+//   console.log(filteredNumbers);
+//   return filteredNumbers;
+// }
+
+//!Стрелочная
+// const filterArray = (numbers, value) => {
+//   const filteredNumbers = [];
+
+//   numbers.forEach((number) => {
+//  if (number > value) {
+//    filteredNumbers.push(number);
+//  }
+//   });
+  
+//   console.log(filteredNumbers);
+// return filteredNumbers;
+
+// }
+
+//!Стрелочная, через тернарный оператор
+// const filterArray = (numbers, value) => {
+//   const filteredNumbers = [];
+
+//   numbers.forEach(number => {
+//     number > value ?
+//       filteredNumbers.push(number) :
+//       null;
+//   });
+
+// console.log(filteredNumbers);
+//   return filteredNumbers;
+// };
+
+// filterArray([1, 2, 3, 4, 5], 3);
+// filterArray([1, 2, 3, 4, 5], 4);
+// filterArray([1, 2, 3, 4, 5], 5);
+// filterArray([12, 24, 8, 41, 76], 38);
+// filterArray([12, 24, 8, 41, 76], 20);
+
+
+/*Задача 12 
+ЗАДАЧА. ОБЩИЕ ЭЛЕМЕНТЫ 2.0
+Замени объявление функции getCommonElements() и коллбек для метода forEach() на 
+стрелочные функции.
+
+-Объявлена переменная getCommonElements.
+
+Переменной getCommonElements присвоена стрелочная функция с параметрами 
+(firstArray, secondArray)
+Для перебора массива firstArray использован метод forEach
+Коллбек для метода forEach это стрелочная функция
+Вызов getCommonElements([1, 2, 3], [2, 4]) возвращает [2]
+Вызов getCommonElements([1, 2, 3], [2, 1, 17, 19]) возвращает [1, 2]
+Вызов getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]) возвращает [12, 27, 3]
+Вызов getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]) возвращает [10, 30, 40]
+Вызов getCommonElements([1, 2, 3], [10, 20, 30]) возвращает []*/
+
+//!Не стрелочная
+//  function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+
+//   firstArray.forEach(function (element) {
+//     if (secondArray.includes(element)) {
+//       commonElements.push(element);
+//     }
+//   });
+
+//    console.log(commonElements);
+//   return commonElements;
+// }
+
+//!Стрелочная
+// const getCommonElements = (firstArray, secondArray) => {
+//   const commonElements = [];
+
+//   firstArray.forEach((element) => {
+//     if (secondArray.includes(element)) {
+//       commonElements.push(element);
+//     }
+//   });
+
+//   console.log(commonElements);
+//   return commonElements;
+// }
+
+// getCommonElements([1, 2, 3], [2, 4]);
+// getCommonElements([1, 2, 3], [2, 1, 17, 19]);
+// getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]);
+// getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]);
+// getCommonElements([1, 2, 3], [10, 20, 30]);
+
+/*Задача 13 */
+ 
+//!Vol 1
+// function changeEven(numbers, value) {
+//    const newArray = numbers.map(number => number % 2 === 0 ? number += value : number
+//    );
+//    return newArray;
+//  }
+
+
+
+
+
+// !Vol 2
+// function changeEven(numbers, value) {
+ //  const newArray = [];
+ //   for (let i = 0; i < numbers.length; i += 1) {
+ //     if (numbers[i] % 2 === 0) {
+ //       newArray.push(numbers[i] + value);
+ //       // console.log(numbers);
+ //       console.log(newArray);
+ //     }
+ //   }
+ //  return newArray;
+ // }
+
+
+//!Vol 3
+//  const newArray = [];
+ // numbers.forEach((number, ind) => {
+ //   if (number % 2 === 0) {
+ //     newArray  = number[ind] + value;
+ //     console.log(newArray);
+ //   }
+ // })
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+/*Задача 14 */
  /*Задача 15 */
  /*Задача 16 */
  /*Задача 17 */
