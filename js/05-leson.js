@@ -38,29 +38,30 @@ pizza named «Viennese»"*/
 
 
 
-// const pizzaPalace = {
-//   pizzas: ["Supercheese", "Smoked", "Four meats"],
+const pizzaPalace = {
+  pizzas: ["Supercheese", "Smoked", "Four meats"],
  
-//     checkPizza(pizzaName) {
-//     //   console.log(this.pizzas.includes(pizzaName));
-//     return this.pizzas.includes(pizzaName);
-//   },
-//   order(pizzaName) {
-//     const isPizzaAvailable = this.checkPizza(pizzaName);
+    checkPizza(pizzaName) {
+    //   console.log(this.pizzas.includes(pizzaName));
+    return this.pizzas.includes(pizzaName);
+  },
+  order(pizzaName) {
+    const isPizzaAvailable = this.checkPizza(pizzaName);
 
-//       if (!isPizzaAvailable) {
-//           console.log(`Sorry, there is no pizza named «${pizzaName}»`);
-//       return `Sorry, there is no pizza named «${pizzaName}»`;
-//     }
-// console.log(`Order accepted, preparing «${pizzaName}» pizza`);
-//     return `Order accepted, preparing «${pizzaName}» pizza`;
-//   },
+    if (!isPizzaAvailable) {
+      
+          console.log(`Sorry, there is no pizza named «${pizzaName}»`);
+      return `Sorry, there is no pizza named «${pizzaName}»`;
+    }
+console.log(`Order accepted, preparing «${pizzaName}» pizza`);
+    return `Order accepted, preparing «${pizzaName}» pizza`;
+  },
   
-// };
-// pizzaPalace.order("Smoked");
-// pizzaPalace.order("Four meats");
-// pizzaPalace.order("Big Mike");
-// pizzaPalace.order("Viennese");
+};
+pizzaPalace.order("Smoked");
+pizzaPalace.order("Four meats");
+pizzaPalace.order("Big Mike");
+pizzaPalace.order("Viennese");
 
 
 
@@ -281,22 +282,22 @@ console.log(dog.legs); // 4
 Используется метод Object.create()*/
 
 
-const ancestor = {
-  name: "Paul",
-  age: 83,
-  surname: "Dawson",
-  heritage: "Irish",
-};
-// Change code below this line
+// const ancestor = {
+//   name: "Paul",
+//   age: 83,
+//   surname: "Dawson",
+//   heritage: "Irish",
+// };
+// // Change code below this line
 
-const parent = Object.create(ancestor);
-parent.name = "Stacey";
-parent.surname = "Moore";
-parent.age = 54;
+// const parent = Object.create(ancestor);
+// parent.name = "Stacey";
+// parent.surname = "Moore";
+// parent.age = 54;
 
-const child = Object.create(parent);
-child.name = "Jason";
-child.age = 27;
+// const child = Object.create(parent);
+// child.name = "Jason";
+// child.age = 27;
 
 
 
@@ -474,22 +475,22 @@ changePrice(newPrice) - обновляет значение свойства pri
  вызывает*/
 
 
-class Car {
-  constructor({ brand, model, price }) {
-    this.brand = brand;
-    this.model = model;
-    this.price = price;
-  }
-  // Change code below this line
-getPrice() {
-  return this.price;
-}
-changePrice(newPrice) {
-  return this.price = newPrice;
-}
+// class Car {
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code below this line
+// getPrice() {
+//   return this.price;
+// }
+// changePrice(newPrice) {
+//   return this.price = newPrice;
+// }
 
-  // Change code above this line
-}
+//   // Change code above this line
+// }
 
 /*Задача 10 
 ЗАДАЧА: СКЛАД
@@ -1085,26 +1086,26 @@ limits"
 Вызов Car.checkPrice(57000) возвращает строку "Error! Price exceeds the maximum"*/
 
 
-class Car {
-  static #MAX_PRICE = 50000;
-  // Change code below this line
-static checkPrice(price) {
-  if (price > Car.#MAX_PRICE) {
-    return "Error! Price exceeds the maximum";
-  }
-  return "Success! Price is within acceptable limits";
-}
-  // Change code above this line
-  constructor({ price }) {
-    this.price = price;
-  }
-}
+// class Car {
+//   static #MAX_PRICE = 50000;
+//   // Change code below this line
+// static checkPrice(price) {
+//   if (price > Car.#MAX_PRICE) {
+//     return "Error! Price exceeds the maximum";
+//   }
+//   return "Success! Price is within acceptable limits";
+// }
+//   // Change code above this line
+//   constructor({ price }) {
+//     this.price = price;
+//   }
+// }
 
-const audi = new Car({ price: 36000 });
-const bmw = new Car({ price: 64000 });
+// const audi = new Car({ price: 36000 });
+// const bmw = new Car({ price: 64000 });
 
-console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
-console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
+// console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+// console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
 
 
 
@@ -1172,26 +1173,29 @@ email, а также одноимённое публичное свойство.
 Обращение к Admin.AccessLevel.SUPERUSER возвращает строку "superuser"*/
 
 
-class User {
-  constructor(email) {
-    this.email = email;
-  }
+// class User {
+//   constructor(email) {
+//     this.email = email;
+//   }
 
-  get email() {
-    return this.email;
-  }
+//   get email() {
+//     return this.email;
+//   }
 
-  set email(newEmail) {
-    this.email = newEmail;
-  }
-}
-// Change code below this line
-class Admin extends User {
-  static AccessLevel = {
-    BASIC: "basic", 
-    SUPERUSER: "superuser", 
-  };
-}
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// // Change code below this line
+// class Admin extends User {
+//   static AccessLevel = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+//   };
+// }
+
+
+
 /*Задача 19 
 КОНСТРУКТОР ДОЧЕРНЕГО КЛАССА
 Первым делом в конструкторе дочернего класса необходимо вызвать специальную 
@@ -1330,51 +1334,51 @@ blacklistedEmails и возвращать true или false.
 Вызов mango.isBlacklisted("mango@mail.com") возвращает false
 Вызов mango.isBlacklisted("poly@mail.com") возвращает true*/
 
-class User {
-  email;
+// class User {
+//   email;
 
-  constructor(email) {
-    this.email = email;
-  }
+//   constructor(email) {
+//     this.email = email;
+//   }
 
-  get email() {
-    return this.email;
-  }
+//   get email() {
+//     return this.email;
+//   }
 
-  set email(newEmail) {
-    this.email = newEmail;
-  }
-}
-class Admin extends User {
-  // Change code below this line
-static AccessLevel = {
-    BASIC: "basic",
-    SUPERUSER: "superuser",
-  };
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// class Admin extends User {
+//   // Change code below this line
+// static AccessLevel = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+//   };
 
-  constructor({ email, accessLevel, blacklistedEmails = [] }) {
-    super(email);
-    this.accessLevel = accessLevel;
-    this.blacklistedEmails = blacklistedEmails;
-  }
-blacklist(email) {
-  this.blacklistedEmails.push(email);
-}
-  isBlacklisted(email) {
-    return this.blacklistedEmails.includes(email);
-  }
-  // Change code above this line
-}
+//   constructor({ email, accessLevel, blacklistedEmails = [] }) {
+//     super(email);
+//     this.accessLevel = accessLevel;
+//     this.blacklistedEmails = blacklistedEmails;
+//   }
+// blacklist(email) {
+//   this.blacklistedEmails.push(email);
+// }
+//   isBlacklisted(email) {
+//     return this.blacklistedEmails.includes(email);
+//   }
+//   // Change code above this line
+// }
 
-const mango = new Admin({
-  email: "mango@mail.com",
-  accessLevel: Admin.AccessLevel.SUPERUSER,
-});
+// const mango = new Admin({
+//   email: "mango@mail.com",
+//   accessLevel: Admin.AccessLevel.SUPERUSER,
+// });
 
-console.log(mango.email); // "mango@mail.com"
-console.log(mango.accessLevel); // "superuser"
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.accessLevel); // "superuser"
 
-mango.blacklist("poly@mail.com");
-console.log(mango.blacklistedEmails); // ["poly@mail.com"]
-console.log(mango.isBlacklisted("mango@mail.com")); // false
-console.log(mango.isBlacklisted("poly@mail.com")); // true
+// mango.blacklist("poly@mail.com");
+// console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+// console.log(mango.isBlacklisted("mango@mail.com")); // false
+// console.log(mango.isBlacklisted("poly@mail.com")); // true
