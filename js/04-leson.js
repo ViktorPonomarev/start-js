@@ -1704,8 +1704,8 @@ Head и Sheree Anthony
 Вызов функции со случайными, но валидными аргументами, возвращает 
 правильное значен */
  
-const getUsersWithFriend = (users, friendName) => users.filter(
-  user => user.friends.includes(friendName));
+// const getUsersWithFriend = (users, friendName) => users.filter(
+//   user => user.friends.includes(friendName));
 
 
 /*Задача 25 
@@ -1899,7 +1899,7 @@ Garrison", "Naomi Buckner", "Goldie Gentry", "Aisha Tran", "Jordan
 /*Задача 27 
 ЗАДАЧА. НЕАКТИВНЫЕ ПОЛЬЗОВАТЕЛИ*/
 
-const getInactiveUsers = (users) => users.filter(({ isActive }) => !isActive);
+// const getInactiveUsers = (users) => users.filter(({ isActive }) => !isActive);
 
 
 /*Задача 28 

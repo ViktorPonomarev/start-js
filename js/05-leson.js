@@ -38,30 +38,30 @@ pizza named «Viennese»"*/
 
 
 
-const pizzaPalace = {
-  pizzas: ["Supercheese", "Smoked", "Four meats"],
+// const pizzaPalace = {
+//   pizzas: ["Supercheese", "Smoked", "Four meats"],
  
-    checkPizza(pizzaName) {
-    //   console.log(this.pizzas.includes(pizzaName));
-    return this.pizzas.includes(pizzaName);
-  },
-  order(pizzaName) {
-    const isPizzaAvailable = this.checkPizza(pizzaName);
+//     checkPizza(pizzaName) {
+//     //   console.log(this.pizzas.includes(pizzaName));
+//     return this.pizzas.includes(pizzaName);
+//   },
+//   order(pizzaName) {
+//     const isPizzaAvailable = this.checkPizza(pizzaName);
 
-    if (!isPizzaAvailable) {
+//     if (!isPizzaAvailable) {
       
-          console.log(`Sorry, there is no pizza named «${pizzaName}»`);
-      return `Sorry, there is no pizza named «${pizzaName}»`;
-    }
-console.log(`Order accepted, preparing «${pizzaName}» pizza`);
-    return `Order accepted, preparing «${pizzaName}» pizza`;
-  },
+//           console.log(`Sorry, there is no pizza named «${pizzaName}»`);
+//       return `Sorry, there is no pizza named «${pizzaName}»`;
+//     }
+// console.log(`Order accepted, preparing «${pizzaName}» pizza`);
+//     return `Order accepted, preparing «${pizzaName}» pizza`;
+//   },
   
-};
-pizzaPalace.order("Smoked");
-pizzaPalace.order("Four meats");
-pizzaPalace.order("Big Mike");
-pizzaPalace.order("Viennese");
+// };
+// pizzaPalace.order("Smoked");
+// pizzaPalace.order("Four meats");
+// pizzaPalace.order("Big Mike");
+// pizzaPalace.order("Viennese");
 
 
 

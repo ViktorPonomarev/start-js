@@ -233,7 +233,7 @@
 
 
 // Напишіть код JS, щоб видалити всі елементи в заданому масиві
-//   Функція `deleteElement()` видаляє всі входження елемента з 
+//   Функція `deleteElement()` видаляє всі входження елемента з
 //   заданого масиву.
 //   let arr = [23,56,4,78,5,63,45,210,56];
 //   arr = deleteElement(arr, 56)
@@ -269,4 +269,126 @@
 // }
 // console.log(deleteElement(arr, 56));
 // console.log(arr);
+
+
+// !
+//Напишіть функцію для зберігання знижки. Функція повертає
+//Іншу функцію, яка приймає суму покупки
+//і повертає фінальну суму із збереженою знижкою.
+
+
+function saveDiscount(discount) {
+  return function  (price) {
+    return price - (price * discount); 
+  }
+} 
+const callacDiscont = saveDiscount(0.1);
+console.log(callacDiscont(100));
+
+// !
+// Напишіть дві функції
+// letMeSeeYourName(callback) - запитує ім'я користувача
+//через prompt і викликає функцію зворотного виклику
+//greet(name) - колбек, який приймає ім'я і виводить в консоль
+//рядок "Привіт <name>"
+//Реалізуй перевірку, чи name не пустий рядок
+
+
+
+// function letMeSeeYourName(callback) {
+//   let name = prompt("Enter your name");
+//   // console.log(name.length);
+//   if (name.trim().length === 0) {
+//     alert("Введіть ваше ім'я");
+//     window.location.reload();
+//   } else {
+//     callback(name);
+//   }
+// }
+
+// function greet(name) {
+//   console.log(`Привіт ${name}`);
+// }
+
+// letMeSeeYourName(greet);
+
+
+// !
+
+//Напишіть функцію savePassword(password), яка приймає
+//пароль і повертає внутрішню функцію, що приймає
+//рядок і повертає true, якщо рядок збігається із збереженим
+//паролем і false - якщо не збігається
+
+// const PASSWORD = '1245';
+
+// function savePassword(password){
+// return function(newPassword){
+//     return password === newPassword;
+// }
+// }
+
+// const checkPassword = savePassword(PASSWORD);
+// console.log(checkPassword('1245'));
+
+// !
+// // Виконай рефакторинг makeDish так, щоб не потрібно було
+// // щоразу передавати ім'я шефа.
+// // Напишіть функцію makeShef(shefName), яка повертає функцію
+// // makeDish(dish), що пам'ятає ім'я шефа при її виклику
+
+// // const makeDish = function (shefName, dish) {
+// //   console.log(`${shefName} is cooking ${dish}`);
+// // };
+
+// // makeDish("Mango", "apple pie");
+// // makeDish("Poly", "muffins");
+// const makeShef = function (shefName) {
+//   // console.log(`${shefName}`);
+
+//   function makeDish(dish) {
+//     console.log(`${shefName} is cooking ${dish}`);
+//   }
+//   makeDish("apple pie");
+//   makeDish("muffins");
+// };
+// const mainShef = makeShef("Mango");
+// // mainShef("apple pie");
+
+// const makeSecondDish = makeShef("Poly");
+// // makeSecondDish("muffins");
+// // console.log("result: ", result);
+// // console.log('makeDish("Mango"): ', makeShef("Mango"));
+
+
+
+//Створіть об'єкт calculator із такими методами
+//read(a, b) - приймає два аргументи та зберігає їх
+//як властивості об'єкта
+//sum() повертає суму збережених значень
+//min() повертає різницю збережених значень
+//mult() перемножує збережені значення та повертає результат
+//div() перемножує збережені значення та повертає результат і враховується ділення на 0
+
+// const calculator = {
+//   read(a, b) {},
+//   sum() {},
+//   min() {},
+//   mult() {},
+//   div() {},
+// };
+// Напиши клас Client який створює об'єкт
+//з властивостями login email
+//Оголоси приватні властивості #login #email,
+//доступ до яких зроби через геттер та сеттер login email
+//Напиши клас Notes, який управляє колекцією нотаток у
+//властивості items.
+//Нотатка - це об'єкт із властивостями text priority
+//Додай класу статичну властивість Priopity,
+//у якій зберігатиметься об'єкт із пріоритетами.
+//Додай методи addNote(note), removeNote(text)
+//updatePriority(text, newPriority)
+
+
+
 
