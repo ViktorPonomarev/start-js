@@ -1382,3 +1382,28 @@ blacklistedEmails и возвращать true или false.
 // console.log(mango.blacklistedEmails); // ["poly@mail.com"]
 // console.log(mango.isBlacklisted("mango@mail.com")); // false
 // console.log(mango.isBlacklisted("poly@mail.com")); // true
+
+
+
+// // Напишіть програму JavaScript, щоб виділяти жирні слова (<strong>) 
+// // наступного абзацу, наводячи курсор миші на посилання
+
+// const link = document.querySelector('#link');
+// console.log(link);
+// const strongs = document.querySelectorAll('strong');
+
+// link.addEventListener('mouseover', e => {
+//   for (let i = 0; i < strongs.length; i += 1) {
+//     strongs[i].style.cssText = `color: yellow;`;
+//   }
+
+//   console.log('addEventListener');
+// });
+// link.addEventListener('mouseout', e => {
+//   for (let i = 0; i < strongs.length; i += 1) {
+//     strongs[i].style.cssText = `color: blue;`;
+//   }
+//   console.log('addEventListener. out');
+// });
+
+
