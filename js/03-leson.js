@@ -1357,3 +1357,19 @@ for (const { title, author, rating } of books) {
 //   },
   
 // };
+
+
+// Отримати дані з API і вивести їх на сторінку
+//https://reqres.in/
+ 
+// fetch('https://reqres.in/api/users/2', {
+//   method: 'PUT',
+//   body: JSON.stringify(
+//     {
+//     "name": "morpheus",
+//     "job": "zion resident"
+// }
+//   )
+// })
+//   .then(response => response.json())
+//   .then(response => console.log(response));
